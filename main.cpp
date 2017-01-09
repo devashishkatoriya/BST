@@ -702,7 +702,7 @@ Enter value of Node :25
 
 Element Inserted!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
