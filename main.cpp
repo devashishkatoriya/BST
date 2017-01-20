@@ -107,6 +107,7 @@ public :
     int height(node *);
     void leaves(node *);
     void swap(node *);
+    void DFS();
 };
 
 node *binary_search_tree::create()											//create()
@@ -501,6 +502,26 @@ void binary_search_tree::swap(node *r)
     }
 }
 
+void binary_search_tree::DFS()
+{
+    node *temp;
+    temp = root;
+    stack <node *>s;
+    while(1)
+    {
+        while(temp!=NULL)
+        {
+            cout<<temp->data<<",";
+            s.push(temp);
+            temp = temp->LChild;
+        }
+        if(s.isEmpty())
+            return;
+        temp = s.pop();
+        temp = temp->RChild;
+    }
+}
+
 int main()
 {
     binary_search_tree obj;
@@ -526,6 +547,7 @@ int main()
         cout<<"\n 14 to Find Height/Depth of Tree";
         cout<<"\n 15 to Find No. of Leaves";
         cout<<"\n 16 to Swap Nodes";
+        cout<<"\n 17 to DFS Traversal";
         cout<<"\n 19 to Clear whole Tree";
         cout<<"\n 0 to  Quit";
         cout<<"\nEnter your choice : ";
@@ -577,6 +599,9 @@ int main()
                 break;
             case 16 : obj.swap(obj.retRoot());
                 cout<<"\nNodes Swapped Successfully!";
+                break;
+            case 17 : cout<<"\nDFS Traversal is ";
+                obj.DFS();
                 break;
             case 19: cout<<"\nAre you sure you want to clear tree (y/n) ? ";
                 cin>>choice;
