@@ -49,7 +49,6 @@ public :
         {
             cout<<"\nStack Underflow!";
         }
-        return nullptr;
     }
     bool isEmpty()
     {
@@ -490,7 +489,7 @@ void binary_search_tree::leaves(node *r)
 void binary_search_tree::swap(node *r)
 {
     node *temp;
-    if(r==NULL)
+    if(r!=NULL)
     {
         swap(r->LChild);
         swap(r->RChild);
@@ -523,11 +522,12 @@ int main()
         cout<<"\n 9 for Post order Interative";
         cout<<"\n 10 to Search an Element";
         cout<<"\n 11 to Remove an Element";
-        cout<<"\n 14 to Find Height/Depth of Tree";
-        cout<<"\n 15 to Find No. of Leaves";
-        cout<<"\n 16 to Swap Nodes";
-        cout<<"\n 19 to Clear whole Tree";
-        cout<<"\n 0 to  Quit";
+        cout<<"\n 14 to Find Height of Tree";
+        cout<<"\n 15 to Find Depth of Tree";
+        cout<<"\n 16 to Find No. of Leaves";
+        cout<<"\n 17 to Swap Nodes";
+        cout<<"\n -1 to Clear whole Tree";
+        cout<<"\n  0 to Quit";
         cout<<"\nEnter your choice : ";
         cin>>ch;
         cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -571,14 +571,16 @@ int main()
                 cin>>key;
                 obj.remove(key);
                 break;
-            case 14 : cout<<"\nThe height of tree is "<<obj.height(obj.retRoot());
+            case 14 : cout<<"\nThe Height of tree is "<<obj.height(obj.retRoot());
                 break;
-            case 15 : cout<<"\nTotal No. of Leaves are "<<obj.retLeaves();
+            case 15 : cout<<"\nThe Depth of tree is "<<obj.height(obj.retRoot());
                 break;
-            case 16 : obj.swap(obj.retRoot());
+            case 16 : cout<<"\nTotal No. of Leaves are "<<obj.retLeaves();
+                break;
+            case 17 : obj.swap(obj.retRoot());
                 cout<<"\nNodes Swapped Successfully!";
                 break;
-            case 19: cout<<"\nAre you sure you want to clear tree (y/n) ? ";
+            case -1: cout<<"\nAre you sure you want to clear tree (y/n) ? ";
                 cin>>choice;
                 if(choice=='y'||choice=='Y')
                 {
@@ -606,11 +608,10 @@ int main()
 }
 
 /* OUTPUT
-C:\Users\A\CLionProjects\BST\cmake-build-debug\BST.exe
 
 Program to perform Various operation on Binary Search Tree.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -622,18 +623,22 @@ Program to perform Various operation on Binary Search Tree.
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :1
  1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enter value of Node :100
  100
 
 Root Inserted!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -645,41 +650,22 @@ Root Inserted!
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :1
  1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Enter value of Node :50
- 50
-
-Element Inserted!
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 1 for Construction and Insertion
- 2 for In order Traversal
- 3 for Pre order Traversal
- 4 for Post order Traversal
- 5 to  Display Root Node
- 6 to  Display No. of Nodes in Tree
- 7 for In order Interative
- 8 for Pre oder Interative
- 9 for Post order Interative
- 10 to Search an Element
- 11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
-Enter your choice :1
- 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enter value of Node :200
  200
 
 Element Inserted!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -691,18 +677,22 @@ Element Inserted!
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :1
  1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enter value of Node :25
- 25
+Enter value of Node :50
+ 50
 
 Element Inserted!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -714,18 +704,22 @@ Element Inserted!
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :1
  1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enter value of Node :75
  75
 
 Element Inserted!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -737,15 +731,19 @@ Element Inserted!
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :2
  2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order Traversal is 25,50,75,100,200,
+In order Traversal is 50,75,100,200,
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 for Construction and Insertion
  2 for In order Traversal
  3 for Pre order Traversal
@@ -757,34 +755,15 @@ In order Traversal is 25,50,75,100,200,
  9 for Post order Interative
  10 to Search an Element
  11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
-Enter your choice :10
- 10
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Enter the search term :200
- 200
-
-Key Found!
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 1 for Construction and Insertion
- 2 for In order Traversal
- 3 for Pre order Traversal
- 4 for Post order Traversal
- 5 to  Display Root Node
- 6 to  Display No. of Nodes in Tree
- 7 for In order Interative
- 8 for Pre oder Interative
- 9 for Post order Interative
- 10 to Search an Element
- 11 to Remove an Element
- 19 to Clear whole Tree
- 0 to  Quit
+ 14 to Find Height of Tree
+ 15 to Find Depth of Tree
+ 16 to Find No. of Leaves
+ 17 to Swap Nodes
+ -1 to Clear whole Tree
+  0 to Quit
 Enter your choice :0
  0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Thank you for using this program :)
 
